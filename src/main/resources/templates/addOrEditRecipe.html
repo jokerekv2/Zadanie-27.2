@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HomePage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <style type="text/css">
+
+        .content {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+            padding-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="content">
+
+    <a href="/">Back</a>
+    <h1 th:text="${mode == 'add' ? 'Add Recipe' : 'Edit Recipe'}"></h1>
+
+    <form th:action="|/recipe/${mode == 'add' ? 'add' : 'edit'}| " th:object="${recipe}" method="post">
+
+        <input type="hidden" th:field="*{likes}">
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Recipe name:</label>
+            <input type="text" class="form-control" id="name" th:field="*{name}">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <input type="text" class="form-control" id="description" th:field="*{description}">
+        </div>
+        <div class="mb-3">
+            <label for="imgUrl" class="form-label">Image url:</label>
+            <input type="text" class="form-control" id="imgUrl" th:field="*{imgUrl}">
+        </div>
+        <div class="mb-3">
+            <label for="preparation" class="form-label">Method of preparation:</label>
+            <textarea class="form-control" id="preparation" rows="3" th:field="*{preparation}"></textarea>
+        </div>
+
+        <input style="width: 150px;height: 60px; margin-top: 15px; border: 2px solid black; background-color: darkorchid; color: white"
+               type="submit" th:value="${mode == 'add' ? 'Add' : 'Submit'}">
+
+    </form>
+
+
+</div>
+
+</body>
+</html>
