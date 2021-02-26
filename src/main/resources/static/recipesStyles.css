@@ -1,0 +1,33 @@
+.content {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 50px;
+}
+
+img {
+    width: 100%;
+    max-width: 200px;
+}
+
+.list-content {
+    display: flex;
+}
+
+.list-content * {
+    flex-direction: column;
+}
+
+.text-content {
+    padding-left: 20px;
+}
+
+.text-content * {
+    display: flex;
+}
+
+#button {
+    display: flex;
+    flex-direction: column;
+    height: 33px;
+}

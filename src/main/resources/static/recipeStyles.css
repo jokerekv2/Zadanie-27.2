@@ -1,0 +1,35 @@
+.content {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 50px;
+}
+
+img {
+    width: 100%;
+    max-width: 500px;
+}
+
+.components-and-img {
+    display: flex;
+}
+
+.components {
+    flex-direction: column;
+    max-width: 300px;
+    margin-top: 40px;
+    margin-right: 200px;
+}
+
+#img {
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+li * {
+    margin-bottom: 5px;
+}
+
+#recipe-preparation {
+    margin-top: 40px;
+}
